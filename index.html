@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Untuk Kanaya 💌</title>
+  <title>Untuk Kanaya</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
@@ -14,7 +14,6 @@
       --pink: #f7a8c4;
       --rose: #e8698a;
       --deep: #c0395f;
-      --blush: #fff0f5;
       --dark: #1a0a10;
       --purple: #7c3a7e;
       --gold: #f9d56e;
@@ -25,9 +24,9 @@
       font-family: 'Nunito', sans-serif;
       background: var(--dark);
       overflow-x: hidden;
-      cursor: default;
     }
 
+    /* STAR CANVAS */
     #starCanvas {
       position: fixed;
       inset: 0;
@@ -35,6 +34,7 @@
       pointer-events: none;
     }
 
+    /* FLOATING PETALS */
     .petal {
       position: fixed;
       top: -60px;
@@ -53,6 +53,7 @@
       100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
     }
 
+    /* INTRO */
     #intro {
       position: fixed;
       inset: 0;
@@ -77,7 +78,6 @@
       text-align: center;
       letter-spacing: 2px;
       animation: glow 2s ease-in-out infinite alternate;
-      text-shadow: 0 0 30px rgba(247,168,196,0.5);
       padding: 0 1rem;
     }
 
@@ -98,6 +98,18 @@
     @keyframes pulse {
       0%, 100% { opacity: 0.4; }
       50%       { opacity: 1; }
+    }
+
+    .envelope-icon {
+      font-size: 5rem;
+      animation: floatEnvelope 3s ease-in-out infinite;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 20px rgba(247,168,196,0.6));
+    }
+
+    @keyframes floatEnvelope {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50%       { transform: translateY(-15px) rotate(3deg); }
     }
 
     #openBtn {
@@ -127,18 +139,7 @@
       box-shadow: 0 0 50px rgba(200,60,90,0.8), 0 8px 30px rgba(0,0,0,0.5);
     }
 
-    .envelope-icon {
-      font-size: 5rem;
-      animation: floatEnvelope 3s ease-in-out infinite;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 20px rgba(247,168,196,0.6));
-    }
-
-    @keyframes floatEnvelope {
-      0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50%       { transform: translateY(-15px) rotate(3deg); }
-    }
-
+    /* MAIN */
     #main {
       position: relative;
       z-index: 10;
@@ -164,7 +165,6 @@
       text-transform: uppercase;
       color: var(--rose);
       margin-bottom: 0.8rem;
-      animation: slideUp 0.8s ease both;
     }
 
     .header h1 {
@@ -175,7 +175,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1.2;
-      animation: slideUp 0.8s ease 0.2s both;
     }
 
     .header .heart-divider {
@@ -197,6 +196,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: 1fr;
@@ -272,6 +272,7 @@
       font-weight: 600;
     }
 
+    /* SORRY SECTION */
     .sorry-section {
       margin-top: 4rem;
       text-align: center;
@@ -292,7 +293,6 @@
       border: none;
       border-radius: 50px;
       background: linear-gradient(135deg, #e8698a, #c0395f, #7c3a7e);
-      background-size: 200% 200%;
       color: #fff;
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
@@ -318,6 +318,7 @@
       box-shadow: 0 0 70px rgba(200,60,90,0.7), 0 12px 40px rgba(0,0,0,0.5);
     }
 
+    /* CONFETTI */
     #confettiCanvas {
       position: fixed;
       inset: 0;
@@ -325,6 +326,7 @@
       pointer-events: none;
     }
 
+    /* FINAL MESSAGE */
     #finalMsg {
       position: fixed;
       inset: 0;
@@ -397,6 +399,7 @@
 
 <canvas id="starCanvas"></canvas>
 
+<!-- Petals dekorasi -->
 <div class="petal" style="left:5%;animation-duration:7s;animation-delay:0s">🌸</div>
 <div class="petal" style="left:15%;animation-duration:9s;animation-delay:1s">💮</div>
 <div class="petal" style="left:28%;animation-duration:6s;animation-delay:2s">🌸</div>
@@ -407,6 +410,7 @@
 <div class="petal" style="left:88%;animation-duration:6.5s;animation-delay:2.5s">🌺</div>
 <div class="petal" style="left:93%;animation-duration:9.5s;animation-delay:0.8s">🌸</div>
 
+<!-- HALAMAN INTRO -->
 <div id="intro">
   <div class="envelope-icon">💌</div>
   <h1>Ada sesuatu<br/>untukmu, sayang…</h1>
@@ -414,6 +418,7 @@
   <button id="openBtn" onclick="openLetter()">Buka Surat</button>
 </div>
 
+<!-- KONTEN UTAMA -->
 <div id="main">
   <header class="header">
     <p class="subtitle">untuk yang tersayang</p>
@@ -422,6 +427,8 @@
   </header>
 
   <div class="cards">
+
+    <!-- KARTU 1 — edit teks di sini -->
     <div class="card">
       <span class="card-icon">🙏</span>
       <h2>Maafkan Aku</h2>
@@ -432,6 +439,7 @@
       </p>
     </div>
 
+    <!-- KARTU 2 — edit teks di sini -->
     <div class="card">
       <span class="card-icon">💭</span>
       <h2>Aku Sadar</h2>
@@ -442,6 +450,7 @@
       </p>
     </div>
 
+    <!-- KARTU 3 — edit teks di sini -->
     <div class="card">
       <span class="card-icon">🌹</span>
       <h2>Kamu Segalanya</h2>
@@ -452,6 +461,7 @@
       </p>
     </div>
 
+    <!-- KARTU 4 — edit teks di sini -->
     <div class="card">
       <span class="card-icon">🌟</span>
       <h2>Janjiku</h2>
@@ -461,27 +471,31 @@
         Percayakan lagi satu kesempatan itu ke aku, ya?
       </p>
     </div>
+
   </div>
 
   <div class="sorry-section">
     <p>tekan kalau kamu udah maafin aku</p>
+    <!-- Edit teks tombol di sini -->
     <button id="sorryBtn" onclick="forgiven()">Aku Minta Maaf, Kanaya</button>
   </div>
 </div>
 
 <canvas id="confettiCanvas"></canvas>
 
+<!-- PESAN AKHIR — edit teks di sini -->
 <div id="finalMsg">
   <div class="big-heart">💖</div>
   <h2>Makasih udah mau maafin aku</h2>
   <p>
     Kamu baik banget, Kanaya. Aku sayang banget sama kamu,
-    dan aku ga akan nyia-nyiain kepercayaan kamu lagi. 
+    dan aku ga akan nyia-nyiain kepercayaan kamu lagi.
   </p>
   <button id="closeBtn" onclick="closeFinal()">Tutup</button>
 </div>
 
 <script>
+  /* STAR CANVAS */
   const starCanvas = document.getElementById('starCanvas');
   const sCtx = starCanvas.getContext('2d');
   let stars = [];
@@ -510,7 +524,7 @@
     sCtx.clearRect(0, 0, starCanvas.width, starCanvas.height);
     const grad = sCtx.createRadialGradient(
       starCanvas.width/2, starCanvas.height/2, 0,
-      starCanvas.width/2, starCanvas.height/2, starCanvas.width*0.8
+      starCanvas.width/2, starCanvas.height/2, starCanvas.width * 0.8
     );
     grad.addColorStop(0, '#2a0a18');
     grad.addColorStop(1, '#0d0308');
@@ -527,7 +541,7 @@
       if (s.y > starCanvas.height) s.y = 0;
 
       sCtx.beginPath();
-      sCtx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      sCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       sCtx.fillStyle = `rgba(247,200,220,${s.a})`;
       sCtx.fill();
     });
@@ -537,6 +551,7 @@
   window.addEventListener('resize', () => { resizeStar(); initStars(); });
   resizeStar(); initStars(); drawStars();
 
+  /* BUKA SURAT */
   function openLetter() {
     document.getElementById('intro').classList.add('hidden');
     const main = document.getElementById('main');
@@ -544,6 +559,7 @@
     setTimeout(() => main.classList.add('visible'), 50);
   }
 
+  /* CONFETTI */
   const confettiCanvas = document.getElementById('confettiCanvas');
   const cCtx = confettiCanvas.getContext('2d');
   let confettiPieces = [];
@@ -567,9 +583,9 @@
         h: Math.random() * 6 + 3,
         color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
         rot: Math.random() * 360,
-        drot: (Math.random()-0.5)*8,
+        drot: (Math.random() - 0.5) * 8,
         dy: Math.random() * 3 + 2,
-        dx: (Math.random()-0.5) * 2,
+        dx: (Math.random() - 0.5) * 2,
       });
     }
   }
@@ -583,7 +599,7 @@
       cCtx.translate(p.x, p.y);
       cCtx.rotate(p.rot * Math.PI / 180);
       cCtx.fillStyle = p.color;
-      cCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      cCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
       cCtx.restore();
     });
     if (confettiRunning || confettiPieces.length > 0) {
@@ -603,6 +619,7 @@
     }, 400);
   }
 
+  /* TOMBOL MAAF */
   function forgiven() {
     startConfetti();
     setTimeout(() => {
@@ -617,6 +634,7 @@
     cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
   }
 
+  /* KLIK SPAWN HATI */
   document.addEventListener('click', (e) => {
     const hearts = ['💗','💕','💖','🌸','✨'];
     const el = document.createElement('span');
@@ -625,7 +643,7 @@
       position: fixed;
       left: ${e.clientX}px;
       top: ${e.clientY}px;
-      font-size: ${Math.random()*16+14}px;
+      font-size: ${Math.random() * 16 + 14}px;
       pointer-events: none;
       z-index: 9999;
       animation: floatUp 1s ease forwards;
@@ -638,8 +656,8 @@
   const style = document.createElement('style');
   style.textContent = `
     @keyframes floatUp {
-      0%   { opacity:1; transform: translate(-50%,-50%) scale(0.5); }
-      100% { opacity:0; transform: translate(-50%, calc(-50% - 80px)) scale(1.3); }
+      0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+      100% { opacity: 0; transform: translate(-50%, calc(-50% - 80px)) scale(1.3); }
     }
   `;
   document.head.appendChild(style);
